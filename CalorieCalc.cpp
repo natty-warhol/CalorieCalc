@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include <cstring>
 using namespace std ;
 
 int main ( int argc, char *argv[]) {
@@ -18,9 +19,12 @@ int main ( int argc, char *argv[]) {
 
     // create deficit values
     sum = g - b ;
-    sum = abs(sum) ;
-    cout << "Deficit in Calories: " << sum << "\n" ;
-    cout << "Deficit in LBs: " << ( sum / l ) << "\n" ;
+    if ( sum < 0 )
+    { cout << "Deficit in Calories: " << sum << "\n" ;
+      cout << "Deficit in LBs: " << ( sum / l ) << "\n" ; }
+    else 
+    { cout << "Surplus in Calories: " << sum << "\n" ;
+        cout << "Surplus in LBs: " << ( sum / l ) << "\n" ; }
 
     // get today's date for file export
     time_t t = time(0) ;
@@ -33,7 +37,7 @@ int main ( int argc, char *argv[]) {
     string input ;
     cout << "Output data? (Y/n): " ;
     cin >> input ;
-    if(input == "y","Y","Yes","yes") { 
+    if(input == "y") { 
         std::ofstream myfile; 
         myfile.open (buffer); 
         if(myfile.is_open()) { 
@@ -42,7 +46,38 @@ int main ( int argc, char *argv[]) {
         } 
         myfile.close(); 
     }
-    else if(input == "n","N","No","no") { cout << "Have a nice day, m'lad \n" << endl ; }
+    if(input == "yes") { 
+        std::ofstream myfile; 
+        myfile.open (buffer); 
+        if(myfile.is_open()) { 
+            myfile << g << " = Total Gained" << endl << b << " = Total Lost" << endl << sum << " = Deficit in Calories" << endl << ( sum / l ) << " = Deficit in LBs" << endl; 
+            std::cout<<"Success! See you tomorrow \n"<<std::endl; 
+        } 
+        myfile.close(); 
+    }
+    if(input == "Y") { 
+        std::ofstream myfile; 
+        myfile.open (buffer); 
+        if(myfile.is_open()) { 
+            myfile << g << " = Total Gained" << endl << b << " = Total Lost" << endl << sum << " = Deficit in Calories" << endl << ( sum / l ) << " = Deficit in LBs" << endl; 
+            std::cout<<"Success! See you tomorrow \n"<<std::endl; 
+        } 
+        myfile.close(); 
+    }
+    if(input == "Yes") { 
+        std::ofstream myfile; 
+        myfile.open (buffer); 
+        if(myfile.is_open()) { 
+            myfile << g << " = Total Gained" << endl << b << " = Total Lost" << endl << sum << " = Deficit in Calories" << endl << ( sum / l ) << " = Deficit in LBs" << endl; 
+            std::cout<<"Success! See you tomorrow \n"<<std::endl; 
+        } 
+        myfile.close(); 
+    }
 
+    else if(input == "n") { cout << "Have a nice day, m'lad \n" << endl ; }
+    else if(input == "N") { cout << "Have a nice day, m'lad \n" << endl ; }
+    else if(input == "no") { cout << "Have a nice day, m'lad \n" << endl ; }
+    else if(input == "No") { cout << "Have a nice day, m'lad \n" << endl ; }
+    else if(strcmp(argv[1], "integer") == 0) { cout << "Wow, rude \n" << endl ; }
     return 0 ;
 }
