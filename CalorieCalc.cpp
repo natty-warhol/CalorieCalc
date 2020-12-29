@@ -37,9 +37,9 @@ int main ( int argc, char *argv[]) {
         std::ofstream myfile; 
         myfile.open (buffer); 
         if(myfile.is_open()) { 
+            myfile << g << " = Total Gained" << endl << b << " = Total Lost" << endl << sum << " = Deficit in Calories" << endl << ( sum / l ) << " = Deficit in LBs" << endl; 
             std::cout<<"Success! See you tomorrow \n"<<std::endl; 
         } 
-        myfile << g << " = Total Gained" << endl << b << " = Total Lost" << endl << sum << " = Deficit in Calories" << endl << ( sum / l ) << " = Deficit in LBs" << endl; 
         myfile.close(); 
     }
     else if(input == "n","N","No","no") { cout << "Have a nice day, m'lad \n" << endl ; }
