@@ -1,6 +1,8 @@
 # CalorieCalc
 
 Just a quick calculator for my partner's project  
+
+![Preview of script output](preview.png "Preview Image")  
   
 The premise, as explained to me, is the gained Calories being the intake throughout the day, lost Calories is what you lost in activity, and then you divide the subtracted sum (made into a whole positive number) by 3500. That number supposedly being the Caloric equivalent to 1LB. 
   
