@@ -35,7 +35,7 @@ int main ( int argc, char *argv[]) {
 
     // save to text file
     string input ;
-    cout << "Output data? (Y/n): " ;
+    cout << "Output data? (y/N): " ;
     cin >> input ;
     if(input == "y") { 
         std::ofstream myfile; 
@@ -74,10 +74,11 @@ int main ( int argc, char *argv[]) {
         myfile.close(); 
     }
 
-    else if(input == "n") { cout << "Have a nice day, m'lad \n" << endl ; }
-    else if(input == "N") { cout << "Have a nice day, m'lad \n" << endl ; }
-    else if(input == "no") { cout << "Have a nice day, m'lad \n" << endl ; }
-    else if(input == "No") { cout << "Have a nice day, m'lad \n" << endl ; }
-    else if(strcmp(argv[1], "integer") == 0) { cout << "Wow, rude \n" << endl ; }
+    if(input == "n") { cout << "Have a nice day, m'lad \n" << endl ; }
+    if(input == "N") { cout << "Have a nice day, m'lad \n" << endl ; }
+    if(input == "no") { cout << "Have a nice day, m'lad \n" << endl ; }
+    if(input == "No") { cout << "Have a nice day, m'lad \n" << endl ; }
+    else if(input == "\n") { cout << "Jesus, say something, ya dick \n" << endl ; }
+    else { cout << "Jesus, pay attention, ya dick \n" << endl ; }
     return 0 ;
 }
